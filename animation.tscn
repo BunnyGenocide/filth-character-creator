@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://crpmyfgp473bb"]
+
+[ext_resource type="Script" path="res://animation.gd" id="1_ompj7"]
+[ext_resource type="Texture2D" uid="uid://7gys4pa6qkdy" path="res://play.png" id="1_su8fp"]
+[ext_resource type="Texture2D" uid="uid://meij0tch6s3t" path="res://plus.png" id="2_r7is2"]
+[ext_resource type="Script" path="res://release_focus.gd" id="2_w5fy2"]
+[ext_resource type="Texture2D" uid="uid://caqygjyp6t6f3" path="res://minus.png" id="3_6i4bd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8uhh"]
+bg_color = Color(0.412, 0.412, 0.412, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bcdw4"]
+color = Color(1, 1, 1, 1)
+
+[node name="Animation" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8uhh")
+script = ExtResource("1_ompj7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_bcdw4")
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 32.0
+text = "animation0"
+placeholder_text = "name"
+script = ExtResource("2_w5fy2")
+
+[node name="TextEdit2" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 35.0
+offset_right = 250.0
+offset_bottom = 65.0
+placeholder_text = "fps"
+script = ExtResource("2_w5fy2")
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 74.0
+offset_bottom = 66.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_su8fp")
+texture_disabled = ExtResource("1_su8fp")
+
+[node name="TextureButton2" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 72.0
+offset_bottom = 136.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("2_r7is2")
+texture_disabled = ExtResource("2_r7is2")
+
+[node name="TextureButton3" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 72.0
+offset_right = 296.0
+offset_bottom = 136.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("3_6i4bd")
+texture_disabled = ExtResource("3_6i4bd")
+
+[connection signal="text_changed" from="Panel/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="focus_exited" from="Panel/TextEdit2" to="." method="_on_text_edit_2_focus_exited"]
+[connection signal="pressed" from="Panel/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Panel/TextureButton3" to="." method="_on_texture_button_3_pressed"]

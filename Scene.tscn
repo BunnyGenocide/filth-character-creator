@@ -1,0 +1,685 @@
+[gd_scene load_steps=49 format=3 uid="uid://dvche0wq2a5p5"]
+
+[ext_resource type="Texture2D" uid="uid://00v8av1ulemj" path="res://pencil.png" id="1_esn3e"]
+[ext_resource type="Texture2D" uid="uid://cpfv6j6obls66" path="res://pressed.png" id="2_ady7q"]
+[ext_resource type="Script" path="res://shortcuts.gd" id="2_pdjxc"]
+[ext_resource type="Texture2D" uid="uid://c4jws2uxf3a01" path="res://selected.png" id="3_8gm2g"]
+[ext_resource type="Texture2D" uid="uid://cvte43t0fa3ho" path="res://selector.png" id="4_b1hdc"]
+[ext_resource type="Script" path="res://button.gd" id="4_bjctw"]
+[ext_resource type="Script" path="res://build_area.gd" id="6_rk6mo"]
+[ext_resource type="Texture2D" uid="uid://bqu6ksbpguada" path="res://move.png" id="7_efmcv"]
+[ext_resource type="Texture2D" uid="uid://c06e8lrdub38s" path="res://guy.png" id="7_igpdx"]
+[ext_resource type="Script" path="res://camera.gd" id="8_a615f"]
+[ext_resource type="Texture2D" uid="uid://dim58v4dxhcwj" path="res://color_picker.png" id="9_3vhe2"]
+[ext_resource type="Texture2D" uid="uid://ck7qc5bdjfa6d" path="res://rotate.png" id="10_hwlch"]
+[ext_resource type="Texture2D" uid="uid://b468wk7t2k0l" path="res://connect_mode.png" id="11_fgub6"]
+[ext_resource type="Texture2D" uid="uid://sgw53edpspjv" path="res://rfood.png" id="11_xca85"]
+[ext_resource type="Texture2D" uid="uid://bhwmasxyw82vc" path="res://mirror1.png" id="12_1fa0m"]
+[ext_resource type="Script" path="res://fps.gd" id="13_7n2om"]
+[ext_resource type="Texture2D" uid="uid://dvohd40pbo2xa" path="res://points.png" id="14_cluff"]
+[ext_resource type="Texture2D" uid="uid://b8q5q64wjnqy4" path="res://scale.png" id="15_pp4qx"]
+[ext_resource type="Texture2D" uid="uid://dm0fbm4i6ybso" path="res://pivot.png" id="15_qv1vx"]
+[ext_resource type="Script" path="res://grid.gd" id="17_adh7h"]
+[ext_resource type="Texture2D" uid="uid://7gys4pa6qkdy" path="res://play.png" id="19_nme4u"]
+[ext_resource type="Texture2D" uid="uid://7ey51wg5s22n" path="res://up.png" id="21_nmweh"]
+[ext_resource type="Texture2D" uid="uid://bauk47rbla21j" path="res://right.png" id="22_501yr"]
+[ext_resource type="Texture2D" uid="uid://bdfwpy4v7hf8t" path="res://left.png" id="23_o6omb"]
+[ext_resource type="Texture2D" uid="uid://cfq0a6q8urh6k" path="res://down.png" id="24_bape2"]
+[ext_resource type="Texture2D" uid="uid://meij0tch6s3t" path="res://plus.png" id="25_n2cqo"]
+[ext_resource type="Texture2D" uid="uid://caqygjyp6t6f3" path="res://minus.png" id="26_ka1q8"]
+[ext_resource type="Texture2D" uid="uid://8fgl08pt0ld7" path="res://visible.png" id="27_hdo7m"]
+[ext_resource type="Texture2D" uid="uid://bd780rdwhcgak" path="res://save.png" id="28_vuoj1"]
+[ext_resource type="Texture2D" uid="uid://oxp1e0dro3u6" path="res://load.png" id="29_lg8no"]
+[ext_resource type="Texture2D" uid="uid://be6hn3snwth03" path="res://compiler.png" id="31_doyfp"]
+[ext_resource type="Script" path="res://animation_container.gd" id="32_4dlv4"]
+[ext_resource type="PackedScene" uid="uid://crpmyfgp473bb" path="res://animation.tscn" id="32_etofq"]
+[ext_resource type="Script" path="res://compiler.gd" id="32_mwj1h"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ugx02"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou8kk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_exxnd"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0cuw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhpaa"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vapp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duana"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayjv2"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1b28"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1575y"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfds2"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4hjk"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bcdu"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bcdw4"]
+color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("8_a615f")
+
+[node name="Control" type="Control" parent="Camera2D" groups=["build_area"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxLine_ugx02")
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/Control/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ou8kk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -358.0
+offset_top = 256.0
+offset_right = 318.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_pdjxc")
+
+[node name="TextureButton2" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_b1hdc")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("4_b1hdc")
+script = ExtResource("4_bjctw")
+
+[node name="TextureButton" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 1
+
+[node name="TextureButton10" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_efmcv")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("7_efmcv")
+script = ExtResource("4_bjctw")
+tool = 8
+
+[node name="TextureButton7" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_pp4qx")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("15_pp4qx")
+script = ExtResource("4_bjctw")
+tool = 11
+
+[node name="TextureButton8" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_hwlch")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("10_hwlch")
+script = ExtResource("4_bjctw")
+tool = 12
+
+[node name="TextureButton3" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_igpdx")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("7_igpdx")
+script = ExtResource("4_bjctw")
+tool = 2
+
+[node name="TextureButton6" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_3vhe2")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("9_3vhe2")
+script = ExtResource("4_bjctw")
+tool = 4
+is_tool = false
+
+[node name="TextureButton4" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_fgub6")
+texture_disabled = ExtResource("11_fgub6")
+script = ExtResource("4_bjctw")
+tool = 3
+is_tool = false
+
+[node name="TextureButton9" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_1fa0m")
+texture_disabled = ExtResource("12_1fa0m")
+script = ExtResource("4_bjctw")
+tool = 7
+is_tool = false
+
+[node name="TextureButton11" type="TextureButton" parent="Camera2D/Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_qv1vx")
+texture_disabled = ExtResource("15_qv1vx")
+script = ExtResource("4_bjctw")
+tool = 22
+is_tool = false
+
+[node name="PanelContainer2" type="PanelContainer" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 640.0
+offset_top = -296.0
+offset_right = 1920.0
+offset_bottom = -232.0
+grow_horizontal = 2
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_exxnd")
+
+[node name="PanelContainer2" type="PanelContainer" parent="Camera2D/Control/PanelContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0cuw")
+
+[node name="TextEdit" type="TextEdit" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 552.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = -320.0
+placeholder_text = "fps"
+script = ExtResource("13_7n2om")
+
+[node name="TextEdit4" type="TextEdit" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -560.0
+offset_bottom = -320.0
+placeholder_text = "grid x
+"
+script = ExtResource("17_adh7h")
+
+[node name="TextEdit3" type="TextEdit" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -536.0
+offset_top = -360.0
+offset_right = -456.0
+offset_bottom = -320.0
+placeholder_text = "grid y
+"
+script = ExtResource("17_adh7h")
+x_type = false
+
+[node name="Button" type="Button" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -640.0
+offset_top = -296.0
+offset_right = 640.0
+offset_bottom = 296.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_bhpaa")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1vapp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_duana")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ayjv2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_s1b28")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1575y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_jfds2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4hjk")
+action_mode = 0
+button_mask = 3
+script = ExtResource("6_rk6mo")
+
+[node name="TextureButton18" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = -360.0
+offset_right = 160.0
+offset_bottom = -296.0
+texture_normal = ExtResource("14_cluff")
+texture_disabled = ExtResource("14_cluff")
+script = ExtResource("4_bjctw")
+tool = 5
+is_tool = false
+
+[node name="TextureButton2" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -360.0
+offset_right = 32.0
+offset_bottom = -296.0
+texture_normal = ExtResource("19_nme4u")
+texture_disabled = ExtResource("19_nme4u")
+script = ExtResource("4_bjctw")
+tool = 10
+is_tool = false
+
+[node name="TextureButton8" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -360.0
+offset_right = 96.0
+offset_bottom = -296.0
+texture_normal = ExtResource("11_xca85")
+texture_disabled = ExtResource("11_xca85")
+script = ExtResource("4_bjctw")
+tool = 6
+is_tool = false
+
+[node name="TextureButton12" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -416.0
+offset_top = -360.0
+offset_right = -352.0
+offset_bottom = -296.0
+texture_normal = ExtResource("21_nmweh")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("21_nmweh")
+script = ExtResource("4_bjctw")
+tool = 13
+is_tool = false
+
+[node name="TextureButton13" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -224.0
+offset_top = -360.0
+offset_right = -160.0
+offset_bottom = -296.0
+texture_normal = ExtResource("22_501yr")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("22_501yr")
+script = ExtResource("4_bjctw")
+tool = 16
+is_tool = false
+
+[node name="TextureButton14" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -288.0
+offset_top = -360.0
+offset_right = -224.0
+offset_bottom = -296.0
+texture_normal = ExtResource("23_o6omb")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("23_o6omb")
+script = ExtResource("4_bjctw")
+tool = 15
+is_tool = false
+
+[node name="TextureButton15" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -352.0
+offset_top = -360.0
+offset_right = -288.0
+offset_bottom = -296.0
+texture_normal = ExtResource("24_bape2")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("24_bape2")
+script = ExtResource("4_bjctw")
+tool = 14
+is_tool = false
+
+[node name="TextureButton16" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = -360.0
+offset_right = -96.0
+offset_bottom = -296.0
+texture_normal = ExtResource("25_n2cqo")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("25_n2cqo")
+script = ExtResource("4_bjctw")
+tool = 17
+is_tool = false
+
+[node name="TextureButton17" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -360.0
+offset_right = -32.0
+offset_bottom = -296.0
+texture_normal = ExtResource("26_ka1q8")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("26_ka1q8")
+script = ExtResource("4_bjctw")
+tool = 18
+is_tool = false
+
+[node name="TextureButton9" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -360.0
+offset_right = 224.0
+offset_bottom = -296.0
+texture_normal = ExtResource("27_hdo7m")
+texture_disabled = ExtResource("27_hdo7m")
+script = ExtResource("4_bjctw")
+tool = 19
+is_tool = false
+
+[node name="TextureButton10" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -360.0
+offset_right = 288.0
+offset_bottom = -296.0
+texture_normal = ExtResource("28_vuoj1")
+texture_disabled = ExtResource("28_vuoj1")
+script = ExtResource("4_bjctw")
+tool = 20
+is_tool = false
+
+[node name="TextureButton11" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = -360.0
+offset_right = 352.0
+offset_bottom = -296.0
+texture_normal = ExtResource("29_lg8no")
+texture_disabled = ExtResource("29_lg8no")
+script = ExtResource("4_bjctw")
+tool = 21
+is_tool = false
+
+[node name="TextureButton19" type="TextureButton" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = -360.0
+offset_right = 416.0
+offset_bottom = -296.0
+texture_normal = ExtResource("31_doyfp")
+texture_disabled = ExtResource("31_doyfp")
+script = ExtResource("4_bjctw")
+tool = 23
+is_tool = false
+
+[node name="Window" type="Window" parent="." groups=["compiler"]]
+position = Vector2i(65, 36)
+size = Vector2i(250, 750)
+visible = false
+unresizable = true
+script = ExtResource("32_mwj1h")
+
+[node name="Camera2D" type="Camera2D" parent="Window"]
+anchor_mode = 0
+
+[node name="AnimationContainer" type="VBoxContainer" parent="Window/Camera2D"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 250.0
+offset_bottom = 1e+07
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+script = ExtResource("32_4dlv4")
+
+[node name="Animation" parent="Window/Camera2D/AnimationContainer" instance=ExtResource("32_etofq")]
+layout_mode = 2
+
+[node name="buttons" type="PanelContainer" parent="Window/Camera2D/AnimationContainer"]
+custom_minimum_size = Vector2(250, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bcdu")
+
+[node name="Panel" type="Panel" parent="Window/Camera2D/AnimationContainer/buttons"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_bcdw4")
+
+[node name="TextureButton4" type="TextureButton" parent="Window/Camera2D/AnimationContainer/buttons/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 260.0
+offset_bottom = 105.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("28_vuoj1")
+texture_disabled = ExtResource("28_vuoj1")
+
+[node name="TextureButton5" type="TextureButton" parent="Window/Camera2D/AnimationContainer/buttons/Panel"]
+layout_mode = 2
+offset_left = 200.0
+offset_top = 5.0
+offset_right = 450.0
+offset_bottom = 105.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("29_lg8no")
+texture_disabled = ExtResource("29_lg8no")
+
+[node name="VScrollBar" type="VScrollBar" parent="Window/Camera2D"]
+visible = false
+offset_right = 8.0
+offset_bottom = 750.0
+
+[node name="Window2" type="Window" parent="." groups=["color_picker"]]
+position = Vector2i(65, 200)
+size = Vector2i(256, 544)
+visible = false
+unresizable = true
+script = ExtResource("32_mwj1h")
+
+[node name="Camera2D" type="Camera2D" parent="Window2"]
+anchor_mode = 0
+
+[node name="TextureButton6" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 96.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton7" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(0, 1, 0, 1)
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 96.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton8" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(0, 0, 1, 1)
+offset_left = 176.0
+offset_top = 32.0
+offset_right = 240.0
+offset_bottom = 96.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton9" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(0, 1, 1, 1)
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 80.0
+offset_bottom = 224.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton10" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(1, 1, 0, 1)
+offset_left = 96.0
+offset_top = 160.0
+offset_right = 160.0
+offset_bottom = 224.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton11" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(1, 0, 1, 1)
+offset_left = 176.0
+offset_top = 160.0
+offset_right = 240.0
+offset_bottom = 224.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton12" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(0.619608, 0.0431373, 0.0588235, 1)
+offset_left = 16.0
+offset_top = 288.0
+offset_right = 80.0
+offset_bottom = 352.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton13" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(1, 0.615686, 0, 1)
+offset_left = 96.0
+offset_top = 288.0
+offset_right = 160.0
+offset_bottom = 352.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton14" type="TextureButton" parent="Window2/Camera2D"]
+modulate = Color(0.615686, 0, 1, 1)
+offset_left = 176.0
+offset_top = 288.0
+offset_right = 240.0
+offset_bottom = 352.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[node name="TextureButton15" type="TextureButton" parent="Window2/Camera2D"]
+offset_left = 96.0
+offset_top = 448.0
+offset_right = 160.0
+offset_bottom = 512.0
+texture_normal = ExtResource("1_esn3e")
+texture_pressed = ExtResource("2_ady7q")
+texture_hover = ExtResource("3_8gm2g")
+texture_disabled = ExtResource("1_esn3e")
+script = ExtResource("4_bjctw")
+tool = 24
+is_tool = false
+
+[connection signal="focus_entered" from="Camera2D/Control/TextEdit" to="Camera2D/Control/TextEdit" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Camera2D/Control/TextEdit" to="Camera2D/Control/TextEdit" method="_on_focus_exited"]
+[connection signal="visibility_changed" from="Camera2D/Control/TextEdit" to="Camera2D/Control/TextEdit" method="_on_visibility_changed"]
+[connection signal="button_up" from="Camera2D/Control/Button" to="Camera2D/Control/Button" method="_on_button_up"]
+[connection signal="focus_entered" from="Camera2D/Control/Button" to="Camera2D/Control/Button" method="_on_focus_entered"]
+[connection signal="close_requested" from="Window" to="Window" method="_on_close_requested"]
+[connection signal="focus_entered" from="Window" to="Window" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Window" to="Window" method="_on_focus_exited"]
+[connection signal="child_order_changed" from="Window/Camera2D/AnimationContainer" to="Window/Camera2D/AnimationContainer" method="_on_child_order_changed"]
+[connection signal="pressed" from="Window/Camera2D/AnimationContainer/buttons/Panel/TextureButton4" to="Window/Camera2D/AnimationContainer" method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="Window/Camera2D/AnimationContainer/buttons/Panel/TextureButton5" to="Window/Camera2D/AnimationContainer" method="_on_texture_button_5_pressed"]
+[connection signal="value_changed" from="Window/Camera2D/VScrollBar" to="Window/Camera2D/AnimationContainer" method="_on_v_scroll_bar_value_changed"]
+[connection signal="close_requested" from="Window2" to="Window2" method="_on_close_requested"]
